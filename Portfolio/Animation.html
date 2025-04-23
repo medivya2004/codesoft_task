@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hover Half Circle Animation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f3f4f6;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .cards {
+        flex-direction: row;
+      }
+    }
+
+    .card {
+      position: relative;
+      width: 320px;
+      height: 180px;
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-content {
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+      position: relative;
+    }
+
+    .card-content h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: #4b5563;
+    }
+
+    .half-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: purple;
+  border-bottom-left-radius: 100%;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+.card:hover .half-circle {
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 0;
+  border-radius: 0;
+}
+
+    .half-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-color: rgba(128, 0, 128, 0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .card:hover .half-overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cards">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="half-circle"></div>
+      <div class="half-overlay"></div>
+      <div class="card-content">
+        <h2>Card One</h2>
+        <p>This is a description for the first card.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="half-circle"></div>
+      <div class="half-overlay"></div>
+      <div class="card-content">
+        <h2>Card Two</h2>
+        <p>This is a description for the second card.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

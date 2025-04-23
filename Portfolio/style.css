@@ -147,7 +147,7 @@
       flex: 1;
       min-width: 300px;
       justify-content: center;
-padding-top: 100px;
+      padding-top: 100px;
 
     }
     
@@ -364,28 +364,42 @@ width:50%;
 
 #box1
 {
-  height: 100px;
+  height: 150px;
   width:50%;
   float: left;
 }
 
 #box2
 {
-  height: 100px;
+  height: 150px;
   width:50%;
   float: left;
 }
 
 #box3
 {
-  height: 100px;
+  height: 150px;
   width:50%;
   float: left;
 }
 
 #box4
 {
-  height: 100px;
+  height: 150px;
+  width:50%;
+  float: left;
+}
+
+#box5
+{
+  height: 150px;
+  width:50%;
+  float: left;
+}
+
+#box6
+{
+  height: 150px;
   width:50%;
   float: left;
 }
@@ -456,16 +470,126 @@ width:50%;
   
 .call1
 {
-  height: 300%;
+  height: 150PX;
   width: 50%;
-  background-color: #6b46c1;
   float: left;
 }
 
 .call2
 {
-  height: 300%;
+  height: 150PX;
   width: 50%;
-  background-color: #4caf50;
   float: left;
 }
+
+.call1 , .call2
+{
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+ 
+ }
+
+ .section-wrapper
+ {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+ }
+ .custom-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .custom-cards {
+    flex-direction: row;
+  }
+}
+
+.custom-card {
+  position: relative;
+  width: 550px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-card-content {
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.custom-card-content h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.custom-card-content p {
+  color: #4b5563;
+}
+
+.custom-cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: purple;
+  border-bottom-left-radius: 100%;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.custom-card:hover .custom-cover {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.custom-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(128, 0, 128, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.custom-card:hover .custom-overlay {
+  opacity: 1;
+}
+
+#talks
+{
+  display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+
+
+.card-rapper-middle
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
